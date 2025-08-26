@@ -1,0 +1,310 @@
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:14.842Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:14.863Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:14.954Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:15.024Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:16.456Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.523Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:16.789Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.855Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:16.888Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.891Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:16.904Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.912Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:16.925Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.948Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:16.961Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:17.016Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:54.240Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.257Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:54.269Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.306Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:54.311Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.319Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:54.388Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.400Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:54.405Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.407Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:25:54.421Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.423Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:26:12.814Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:12.835Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:26:12.839Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.001Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:26:13.039Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.107Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:26:13.147Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.163Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:26:13.237Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.251Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:26:13.271Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.289Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:30:42.183Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.456Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:30:42.459Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.482Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:30:42.550Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.616Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:30:42.742Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.751Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:30:42.786Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.795Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:30:42.806Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.817Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.057Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.184Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.303Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.313Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.527Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.533Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.538Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.545Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.555Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.570Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.576Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:39:37.588Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.348Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.361Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.408Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.419Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.456Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.559Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.421Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.430Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.439Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.443Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.445Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.456Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.459Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.464Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.471Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.480Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.487Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:53:46.492Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.226Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.228Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.248Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.285Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.291Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.302Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.171Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.262Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.287Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.290Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.301Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.305Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.313Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.318Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.321Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.332Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.339Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:00.342Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.632Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.834Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.849Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.853Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.981Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.992Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:01.032Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:01.036Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:01.047Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:01.062Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:01.219Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:01.264Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.236Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.280Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.286Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.358Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.369Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.374Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.383Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.386Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.389Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.392Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.399Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:33.409Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.869Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.871Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.979Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.983Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.990Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.992Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.126Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.407Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.472Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.476Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.484Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.498Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.503Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.507Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.513Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.518Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.521Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.532Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.755Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.758Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.783Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.842Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.852Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.865Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T17:59:49.869Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.989Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.015Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.066Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.307Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.327Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.482Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.539Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.545Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.550Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.559Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.563Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.577Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.582Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.587Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.589Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.593Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:01:23.598Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:23.953Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:23.970Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:23.998Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:24.163Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:24.266Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:24.278Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.132Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.150Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.205Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.316Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.332Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.344Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.349Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.362Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.370Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.400Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.410Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:19.416Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.629Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.630Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.639Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.646Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.653Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.902Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.253Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.260Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.265Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.271Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.278Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.280Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.285Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.289Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.300Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.303Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.309Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:03:20.315Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.421Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.446Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.461Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.480Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.482Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.729Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.813Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.894Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.896Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.899Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.905Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.907Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.909Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.916Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.922Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.927Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.933Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:33.941Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.422Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.433Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.453Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.456Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.464Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.534Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:45.760Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:45.777Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:45.783Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:45.794Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:45.840Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.005Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.007Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.015Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.027Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.031Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.039Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.044Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.444Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.468Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.491Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.499Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.501Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:18:46.506Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.517Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.525Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.541Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.542Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.672Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.930Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.950Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.953Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.955Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.957Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.959Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.963Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.964Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.970Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.975Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.978Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.982Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:21.989Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.338Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.342Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.347Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.530Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.536Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.574Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:35.823Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.162Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.222Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.229Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.236Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.239Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.245Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.252Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.262Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.269Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.273Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.280Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.504Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.518Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.592Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.602Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.606Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:22:36.612Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.734Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.770Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.772Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.789Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.802Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:37.056Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.425Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.431Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.432Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.434Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.440Z"}
+{"level":"info","message":"Request: OPTIONS /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.442Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.463Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.477Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.487Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.494Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.498Z"}
+{"level":"info","message":"Request: GET /api/files? | User: unauthenticated | IP: ::1 | Query: {} | Body: undefined","timestamp":"2025-08-26T18:34:56.500Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:56.864Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.089Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.098Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.125Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.162Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.207Z"}

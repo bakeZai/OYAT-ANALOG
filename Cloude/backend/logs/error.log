@@ -1,0 +1,112 @@
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:14.863Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:15.024Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.523Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.855Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.891Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.912Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:16.948Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:17.016Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.257Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.306Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.319Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.400Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.407Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:25:54.423Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:12.835Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.001Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.107Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.163Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.251Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:26:13.289Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.456Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.482Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.616Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.751Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.795Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"No token provided\"}","timestamp":"2025-08-26T17:30:42.817Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.348Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.361Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.408Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.419Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.456Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:39:38.559Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.226Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.228Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.248Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.285Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.291Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:53:47.302Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.632Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.834Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.849Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.853Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.981Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:00.992Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:01.219Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:01.264Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.869Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.871Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.979Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.983Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.990Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:33.992Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.755Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.758Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.783Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:49.989Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.015Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.066Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.307Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T17:59:50.327Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:23.953Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:23.970Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:23.998Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:24.163Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:24.266Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:01:24.278Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.629Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.630Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.639Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.646Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.653Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:19.902Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.421Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.446Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.461Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.480Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.482Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:03:20.729Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.422Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.433Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.453Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.456Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.464Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:34.534Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.444Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.468Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.517Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.525Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.541Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.542Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.672Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:18:46.930Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.338Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.342Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.347Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.530Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.536Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:22.574Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.504Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.518Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.734Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.770Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.772Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.789Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:36.802Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:22:37.056Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:56.864Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.089Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.098Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.125Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.162Z"}
+{"level":"error","message":"Error Response: 401 | User: unauthenticated | URL: /api/files? | Message: {\"error\":\"Invalid token\"}","timestamp":"2025-08-26T18:34:57.207Z"}
