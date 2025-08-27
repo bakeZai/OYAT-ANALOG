@@ -1,5 +1,5 @@
-// backend/src/middleware/auth.ts
-// Промежуточное ПО для аутентификации пользователя на бэкенде.
+// backend/src/middleware/auth.ts - С УЛУЧШЕННЫМ ЛОГИРОВАНИЕМ
+
 import { Request, Response, NextFunction } from 'express';
 import { supabaseAdmin } from '../config/supabase';
 
@@ -16,20 +16,50 @@ export const authenticateUser = async (
   res: Response,
   next: NextFunction
 ) => {
+  console.log('🔐 Authentication middleware started');
+  console.log('Request path:', req.path);
+  console.log('Request method:', req.method);
+  
   try {
-    const token = req.headers.authorization?.replace('Bearer ', '');
+    const authHeader = req.headers.authorization;
+    console.log('Auth header present:', !!authHeader);
     
-    if (!token) {
-      return res.status(401).json({ error: 'No token provided' });
+    if (!authHeader) {
+      console.log('❌ No authorization header provided');
+      return res.status(401).json({ error: 'No authorization header provided' });
     }
 
+    const token = authHeader.replace('Bearer ', '');
+    console.log('Token extracted, length:', token.length);
+    
+    if (!token || token.length < 10) {
+      console.log('❌ Invalid token format');
+      return res.status(401).json({ error: 'Invalid token format' });
+    }
+
+    console.log('🔍 Verifying token with Supabase...');
+    
     // ИСПОЛЬЗУЕМ supabaseAdmin для проверки токена на сервере.
-    // Это более надежный способ.
     const { data, error } = await supabaseAdmin.auth.getUser(token);
 
-    if (error || !data || !data.user) {
-      return res.status(401).json({ error: 'Invalid token' });
+    if (error) {
+      console.log('❌ Supabase auth error:', error.message);
+      return res.status(401).json({ 
+        error: 'Token verification failed',
+        details: error.message 
+      });
     }
+
+    if (!data || !data.user) {
+      console.log('❌ No user data returned from Supabase');
+      return res.status(401).json({ error: 'Invalid token - no user data' });
+    }
+
+    console.log('✅ User authenticated:', {
+      id: data.user.id,
+      email: data.user.email,
+      role: data.user.role
+    });
 
     // Сохраняем данные пользователя в объекте запроса
     req.user = {
@@ -39,6 +69,10 @@ export const authenticateUser = async (
 
     next();
   } catch (error) {
-    res.status(401).json({ error: 'Authentication failed' });
+    console.error('💥 Authentication error:', error);
+    res.status(401).json({ 
+      error: 'Authentication failed',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 };

@@ -1,4 +1,4 @@
-// frontend/src/lib/api.ts
+// frontend/src/lib/api.ts - С УЛУЧШЕННЫМ ЛОГИРОВАНИЕМ
 
 import { File, Folder } from '@/types/files';
 
@@ -6,38 +6,60 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
 /**
  * Загрузка файла на сервер.
- * @param file Файл, который нужно загрузить.
- * @param currentFolderId ID текущей папки.
- * @param token The user's authentication token. ⬅️ ДОБАВЛЕНО
  */
 export const uploadFileToApi = async (file: globalThis.File, currentFolderId: string | null, token: string) => {
+  console.log('🚀 Starting file upload:', {
+    fileName: file.name,
+    fileSize: file.size,
+    fileType: file.type,
+    currentFolderId,
+    hasToken: !!token
+  });
+
   const formData = new FormData();
   formData.append('file', file);
   if (currentFolderId) {
     formData.append('folderId', currentFolderId);
   }
 
-  const response = await fetch(`${API_URL}/files/upload`, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Authorization': `Bearer ${token}` // ⬅️ ДОБАВЛЕНО
-    },
-  });
+  console.log('📡 Sending request to:', `${API_URL}/files/upload`);
 
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.message || 'Ошибка загрузки файла');
+  try {
+    const response = await fetch(`${API_URL}/files/upload`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+    });
+
+    console.log('📨 Response status:', response.status, response.statusText);
+
+    if (!response.ok) {
+      let errorData;
+      try {
+        errorData = await response.json();
+        console.error('❌ Server error response:', errorData);
+      } catch (parseError) {
+        // Если не удается распарсить JSON, получаем текст
+        const errorText = await response.text();
+        console.error('❌ Server error (text):', errorText);
+        throw new Error(`Server error ${response.status}: ${errorText}`);
+      }
+      throw new Error(errorData.error || errorData.message || 'Ошибка загрузки файла');
+    }
+
+    const result = await response.json();
+    console.log('✅ Upload successful:', result);
+    return result;
+
+  } catch (error) {
+    console.error('💥 Upload failed:', error);
+    throw error;
   }
-
-  return response.json();
 };
 
-/**
- * Получение списка файлов и папок для текущей папки.
- * @param currentFolderId ID текущей папки.
- * @param token The user's authentication token.
- */
+// Остальные функции без изменений...
 export const fetchUserFiles = async (currentFolderId: string | null, token: string): Promise<(File | Folder)[]> => {
   const params = new URLSearchParams();
   if (currentFolderId) {
@@ -48,7 +70,7 @@ export const fetchUserFiles = async (currentFolderId: string | null, token: stri
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // ⬅️ УЖЕ ИСПРАВЛЕНО
+      'Authorization': `Bearer ${token}`
     },
     cache: 'no-store',
   });
@@ -73,17 +95,11 @@ export const fetchUserFiles = async (currentFolderId: string | null, token: stri
   return files || [];
 };
 
-
-/**
- * Удаление файла или папки.
- * @param id ID файла или папки.
- * @param token The user's authentication token. ⬅️ ДОБАВЛЕНО
- */
 export const deleteFileFromApi = async (id: string, token: string) => {
   const response = await fetch(`${API_URL}/files/${id}`, {
     method: 'DELETE',
     headers: {
-      'Authorization': `Bearer ${token}` // ⬅️ ДОБАВЛЕНО
+      'Authorization': `Bearer ${token}`
     },
   });
 
@@ -95,18 +111,12 @@ export const deleteFileFromApi = async (id: string, token: string) => {
   return response.json();
 };
 
-/**
- * Переименование файла или папки.
- * @param id ID файла или папки.
- * @param newName Новое имя.
- * @param token The user's authentication token. ⬅️ ДОБАВЛЕНО
- */
 export const renameFileInApi = async (id: string, newName: string, token: string) => {
   const response = await fetch(`${API_URL}/files/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // ⬅️ ДОБАВЛЕНО
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify({ name: newName }),
   });
@@ -119,18 +129,12 @@ export const renameFileInApi = async (id: string, newName: string, token: string
   return response.json();
 };
 
-/**
- * Создание новой папки.
- * @param folderName Имя новой папки.
- * @param parentFolderId ID родительской папки.
- * @param token The user's authentication token. ⬅️ ДОБАВЛЕНО
- */
 export const createFolderInApi = async (folderName: string, parentFolderId: string | null, token: string) => {
   const response = await fetch(`${API_URL}/folders`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // ⬅️ ДОБАВЛЕНО
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify({ name: folderName, parentId: parentFolderId }),
   });

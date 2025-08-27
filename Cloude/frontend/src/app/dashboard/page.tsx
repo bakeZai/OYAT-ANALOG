@@ -62,7 +62,17 @@ export default function DashboardPage() {
       onClose={() => setUploadModalOpen(false)} // закрытие диалога
      onUploadSuccess={fetchFiles}          // что делать после загрузки
     currentFolderId={currentFolderId}     // передаем текущую папку
+
+
+    
     />
+
+<button
+  onClick={() => setUploadModalOpen(true)}
+  className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+>
+  Добавить файл
+</button>
 
       {/* Кнопка для создания папки */}
       <button

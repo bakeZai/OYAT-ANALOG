@@ -67,21 +67,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       password,
       options: {
         data: {
-          full_name: fullName, // это метаданные auth.users, можно оставить
+          full_name: fullName,
         },
       },
     });
   
-    // Создаём профиль
+    // ✅ Исправляем поле
     if (data?.user) {
-      await supabase
+      const { error: profileError } = await supabase
         .from('profiles')
         .insert([
           {
             id: data.user.id,
-            display_name: fullName, // ✅ теперь правильно
+            full_name: fullName, // ✅ Правильное поле
+            storage_used: 0,
+            storage_limit: 1000 * 1024 * 1024, // 1GB
           },
         ]);
+      
+      if (profileError) {
+        console.error('Profile creation error:', profileError);
+      }
     }
     
     return { data, error };

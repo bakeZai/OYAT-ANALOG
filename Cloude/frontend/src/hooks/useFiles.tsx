@@ -63,9 +63,10 @@ export const useFiles = (currentFolderId: string | null = null) => {
    */
   const uploadFile = async (file: globalThis.File) => {
     if (!token) throw new Error('Authentication token is missing.');
+    console.log('Токен:', token); // Логируем токен
     try {
-      await uploadFileToApi(file, currentFolderId, token); // ⬅️ PASS THE TOKEN
-      await refreshFiles(); // Refresh after successful upload
+      await uploadFileToApi(file, currentFolderId, token);
+      await refreshFiles();
     } catch (err: any) {
       setError(err.message);
       throw err;

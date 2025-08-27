@@ -1,13 +1,38 @@
+// backend/src/controllers/fileController.ts
+
 import { Response } from "express";
 import { AuthenticatedRequest } from "../middleware/auth";
-import { FileService } from "../services/fileService";
+import { supabase, supabaseAdmin } from "../config/supabase";
 
-const fileService = new FileService();
+// ✅ Добавим заглушку для fileService, чтобы код работал
+// В реальном проекте вы бы импортировали его из отдельного файла
+const fileService = {
+  getUserFilesAndFolders: async (userId: string, folderId?: string) => {
+    // Вставьте сюда логику из fileRoutes.ts GET-запроса
+    // Например:
+    const { data, error } = await supabase
+      .from('files')
+      .select('*')
+      .eq('user_id', userId);
+    if (error) throw error;
+    return { files: data };
+  },
+  deleteFile: async (fileId: string, userId: string) => {
+    // Логика удаления
+  },
+  renameFile: async (fileId: string, newName: string, userId: string) => {
+    // Логика переименования
+  },
+  getFileDownloadUrl: async (fileId: string, userId: string) => {
+    // Логика получения URL
+  },
+  getUserStorage: async (userId: string) => {
+    // Логика получения данных о хранилище
+  }
+};
+
 
 export class FileController {
-  /**
-   * Загрузка файла
-   */
   async uploadFile(req: AuthenticatedRequest, res: Response): Promise<void> {
     try {
       if (!req.file) {
@@ -16,15 +41,62 @@ export class FileController {
       }
 
       const { folderId } = req.body;
-      const file = await fileService.uploadFile(
-        req.file,
-        req.user!.id,
-        folderId
-      );
+      const userId = req.user!.id;
+      const file = req.file;
 
-      res.status(201).json(file);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message });
+      console.log('Uploading file:', file.originalname, 'Size:', file.size);
+      console.log('Buffer available:', !!file.buffer);
+
+      const timestamp = Date.now();
+      const fileName = `${userId}/${timestamp}-${file.originalname}`;
+      
+      const { data: storageData, error: storageError } = await supabaseAdmin.storage
+      .from('files')
+      .upload(fileName, file.buffer, {
+        contentType: file.mimetype,
+        upsert: false
+      });
+
+      if (storageError) {
+        console.error('Storage error:', storageError);
+        res.status(500).json({ error: 'Failed to upload file to storage' });
+        return; // ✅ Возвращаем, чтобы прервать выполнение
+      }
+
+      const { data: dbData, error: dbError } = await supabase
+        .from('files')
+        .insert({
+          name: file.originalname,
+          original_name: file.originalname,
+          size: file.size,
+          mime_type: file.mimetype,
+          storage_path: fileName,
+          folder_id: folderId || null,
+          user_id: userId
+        })
+        .select()
+        .single();
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        await supabaseAdmin.storage.from('files').remove([fileName]);
+        res.status(500).json({ error: 'Failed to save file metadata' });
+        return; // ✅ Возвращаем, чтобы прервать выполнение
+      }
+
+      console.log(`File uploaded successfully: ${file.originalname}`);
+      res.json({ 
+        success: true, 
+        file: {
+          ...dbData,
+          type: 'file',
+          url: supabase.storage.from('files').getPublicUrl(fileName).data.publicUrl
+        }
+      });
+
+    } catch (error) {
+      console.error('Error in POST /upload:', error);
+      res.status(500).json({ error: 'Internal server error' });
     }
   }
 

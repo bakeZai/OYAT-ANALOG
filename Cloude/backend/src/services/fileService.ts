@@ -1,8 +1,7 @@
-// backend/src/services/fileService.ts
+// backend/src/services/fileService.ts - ИСПРАВЛЕННАЯ ВЕРСИЯ
+
 import { supabase, supabaseAdmin } from '../config/supabase';
 import path from 'path';
-import fs from 'fs';
-import logger from 'winston';
 
 export class FileService {
   /**
@@ -10,30 +9,32 @@ export class FileService {
    * @param file Объект файла, предоставленный Multer.
    * @param userId Идентификатор пользователя.
    * @param folderId Идентификатор папки (необязательно).
-   * 
-   * 
    */
-
-
-  
   async uploadFile(file: Express.Multer.File, userId: string, folderId?: string) {
     const fileName = `${Date.now()}-${path.basename(file.originalname)}`;
     const filePath = `${userId}/${fileName}`;
-    logger.info(`Uploading file: ${file.originalname} for user ${userId}, folder ${folderId || 'root'}`);
+    
+    console.log(`Uploading file: ${file.originalname} for user ${userId}, folder ${folderId || 'root'}`);
+    console.log(`File buffer size: ${file.buffer?.length || 0} bytes`);
 
     try {
+      // ✅ ИСПРАВЛЕНИЕ: используем file.buffer вместо fs.readFileSync(file.path)
+      if (!file.buffer) {
+        throw new Error('File buffer is missing. Make sure multer memoryStorage is configured correctly.');
+      }
+
       // Загрузка в Storage
       const { data: uploadData, error: uploadError } = await supabaseAdmin.storage
         .from('files')
-        .upload(filePath, fs.readFileSync(file.path), {
+        .upload(filePath, file.buffer, { // ✅ Используем file.buffer
           contentType: file.mimetype,
         });
 
       if (uploadError) {
-        logger.error(`Upload failed for ${filePath}: ${uploadError.message}`);
+        console.error(`Upload failed for ${filePath}: ${uploadError.message}`);
         throw new Error(`Upload failed: ${uploadError.message}`);
       }
-      logger.info(`File uploaded to Storage: ${filePath}`);
+      console.log(`File uploaded to Storage: ${filePath}`);
 
       // Сохранение метаданных
       const { data: fileData, error: dbError } = await supabaseAdmin
@@ -53,30 +54,30 @@ export class FileService {
         .single();
 
       if (dbError) {
-        logger.error(`DB insert failed for ${filePath}: ${dbError.message}`);
+        console.error(`DB insert failed for ${filePath}: ${dbError.message}`);
+        // Удаляем файл из storage если не удалось сохранить в БД
         await supabaseAdmin.storage.from('files').remove([filePath]);
         throw new Error(`Database error: ${dbError.message}`);
       }
-      logger.info(`File metadata saved: ${fileData.id}`);
+      console.log(`File metadata saved: ${fileData.id}`);
 
       // Обновление storage_used
       await this.updateUserStorageUsed(userId);
-      logger.info(`User storage updated for ${userId}`);
+      console.log(`User storage updated for ${userId}`);
 
       return fileData;
-    } finally {
-      // Удаление временного файла
-      fs.unlink(file.path, (err) => {
-        if (err) logger.error(`Failed to delete temp file ${file.path}: ${err.message}`);
-      });
+    } catch (error: any) {
+      console.error('Error in uploadFile:', error);
+      throw error;
     }
+    // ❌ УБИРАЕМ finally блок с fs.unlink - файла на диске нет!
   }
 
   /**
    * Обновляет количество использованного места в профиле пользователя.
    */
   private async updateUserStorageUsed(userId: string) {
-    logger.info(`Updating storage usage for user ${userId}`);
+    console.log(`Updating storage usage for user ${userId}`);
     const { data: files, error } = await supabase
       .from('files')
       .select('size')
@@ -84,12 +85,12 @@ export class FileService {
       .eq('is_deleted', false);
 
     if (error) {
-      logger.error(`Failed to fetch files for storage update: ${error.message}`);
+      console.error(`Failed to fetch files for storage update: ${error.message}`);
       throw error;
     }
 
     const totalSize = files?.reduce((sum, file) => sum + file.size, 0) || 0;
-    logger.info(`Calculated total storage: ${totalSize} bytes for user ${userId}`);
+    console.log(`Calculated total storage: ${totalSize} bytes for user ${userId}`);
 
     const { error: updateError } = await supabaseAdmin
       .from('profiles')
@@ -97,16 +98,14 @@ export class FileService {
       .eq('id', userId);
 
     if (updateError) {
-      logger.error(`Failed to update storage_used: ${updateError.message}`);
+      console.error(`Failed to update storage_used: ${updateError.message}`);
       throw updateError;
     }
   }
 
-  /**
-   * Получает файлы и папки пользователя.
-   */
+  // Остальные методы остаются без изменений...
   async getUserFilesAndFolders(userId: string, folderId?: string) {
-    logger.info(`Fetching files and folders for user ${userId}, folder ${folderId || 'root'}`);
+    console.log(`Fetching files and folders for user ${userId}, folder ${folderId || 'root'}`);
     try {
       const filesQuery = supabase
         .from('files')
@@ -133,27 +132,18 @@ export class FileService {
       const { data: folders, error: foldersError } = foldersResult;
 
       if (filesError || foldersError) {
-        logger.error(`Supabase error: ${filesError?.message || foldersError?.message} | User: ${userId}`);
+        console.error(`Supabase error: ${filesError?.message || foldersError?.message} | User: ${userId}`);
         throw new Error(`Failed to fetch: ${filesError?.message || foldersError?.message}`);
       }
 
-      logger.info(`Fetched ${files.length} files and ${folders.length} folders for user ${userId}`);
-      return [...folders, ...files];
+      console.log(`Fetched ${files?.length || 0} files and ${folders?.length || 0} folders for user ${userId}`);
+      return [...(folders || []), ...(files || [])];
     } catch (err: any) {
-      logger.error(`Unexpected error in getUserFilesAndFolders: ${err.message}`);
+      console.error(`Unexpected error in getUserFilesAndFolders: ${err.message}`);
       throw err;
     }
   }
 
-  // Остальные методы (deleteFile, renameFile, moveFile, getFileDownloadUrl, getUserStorage, getUserProfile)
-  // аналогично дополняются logger.info и logger.error для каждой операции
-
-
-  /**
-   * Мягко удаляет файл.
-   * @param fileId Идентификатор файла.
-   * @param userId Идентификатор пользователя.
-   */
   async deleteFile(fileId: string, userId: string) {
     const { data: file, error: fetchError } = await supabase
       .from('files')
@@ -166,7 +156,6 @@ export class FileService {
       throw new Error('File not found');
     }
 
-    // Обновляем запись в БД (мягкое удаление)
     const { error: updateError } = await supabaseAdmin
       .from('files')
       .update({
@@ -180,22 +169,14 @@ export class FileService {
       throw new Error(`Failed to delete file: ${updateError.message}`);
     }
 
-    // Обновляем использованное место
     await this.updateUserStorageUsed(userId);
-
     return { message: 'File deleted successfully' };
   }
 
-  /**
-   * Переименовывает файл.
-   * @param fileId Идентификатор файла.
-   * @param newName Новое имя.
-   * @param userId Идентификатор пользователя.
-   */
   async renameFile(fileId: string, newName: string, userId: string) {
     const { data, error } = await supabase
       .from('files')
-      .update({ original_name: newName }) // Используем original_name для отображения
+      .update({ original_name: newName })
       .eq('id', fileId)
       .eq('user_id', userId)
       .eq('is_deleted', false)
@@ -209,12 +190,6 @@ export class FileService {
     return data;
   }
 
-  /**
-   * Перемещает файл в другую папку.
-   * @param fileId Идентификатор файла.
-   * @param targetFolderId Идентификатор целевой папки.
-   * @param userId Идентификатор пользователя.
-   */
   async moveFile(fileId: string, targetFolderId: string | null, userId: string) {
     const { data, error } = await supabase
       .from('files')
@@ -232,11 +207,6 @@ export class FileService {
     return data;
   }
 
-  /**
-   * Генерирует URL для скачивания файла.
-   * @param fileId Идентификатор файла.
-   * @param userId Идентификатор пользователя.
-   */
   async getFileDownloadUrl(fileId: string, userId: string) {
     const { data: file, error: fetchError } = await supabase
       .from('files')
@@ -252,7 +222,7 @@ export class FileService {
 
     const { data, error } = await supabase.storage
       .from('files')
-      .createSignedUrl(file.storage_path, 60); // URL действителен 60 секунд
+      .createSignedUrl(file.storage_path, 60);
 
     if (error) {
       throw new Error(`Failed to generate download URL: ${error.message}`);
@@ -261,10 +231,6 @@ export class FileService {
     return data.signedUrl;
   }
 
-  /**
-   * Получает информацию об использовании хранилища и профиле пользователя.
-   * @param userId Идентификатор пользователя.
-   */
   async getUserStorage(userId: string) {
     await this.getUserProfile(userId);
 
@@ -278,7 +244,6 @@ export class FileService {
       throw new Error('User profile not found');
     }
 
-    // В данном проекте общая емкость хранилища фиксирована на уровне 1 ГБ
     const totalStorage = 1000 * 1024 * 1024; // 1 GB в байтах
 
     return {
@@ -287,20 +252,14 @@ export class FileService {
     };
   }
 
-  /**
-   * Находит или создает профиль пользователя.
-   * @param userId Идентификатор пользователя.
-   */
   private async getUserProfile(userId: string) {
-    // Проверяем, существует ли профиль
     const { data: profile, error: fetchError } = await supabase
       .from('profiles')
       .select('id')
       .eq('id', userId)
       .single();
   
-    if (fetchError && fetchError.code === 'PGRST116') { // запись не найдена
-      // создаем новый профиль
+    if (fetchError && fetchError.code === 'PGRST116') {
       const { error: insertError } = await supabase
         .from('profiles')
         .insert([{
@@ -308,7 +267,7 @@ export class FileService {
           full_name: null,
           avatar_url: null,
           storage_used: 0,
-          storage_limit: 1000 * 1024 * 1024, // 1GB по умолчанию
+          storage_limit: 1000 * 1024 * 1024,
         }]);
   
       if (insertError) {
