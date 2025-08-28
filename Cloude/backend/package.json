@@ -1,5 +1,3 @@
-Я обновил ваш файл package.json и добавил скрипт build. Вот готовый код.
-
 {
   "name": "cloud-storage-backend",
   "version": "1.0.0",
