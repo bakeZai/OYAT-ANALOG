@@ -1,5 +1,7 @@
+// frontend/src/components/layout/Header.tsx - БЕЗ ДУБЛИРОВАНИЯ ЗАПРОСОВ
+
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -11,34 +13,67 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { useAuth } from '@/hooks/useAuth';
-import { useFiles } from '@/hooks/useFiles';
+import Link from "next/link";
 
 interface HeaderProps {
   onOpenSidebar: () => void;
+  // ✅ Принимаем статистику от родительского компонента
+  storageStats?: {
+    used: number;
+    total: number;
+  };
 }
 
-const Header: React.FC<HeaderProps> = ({ onOpenSidebar }) => {
+const Header: React.FC<HeaderProps> = ({ onOpenSidebar, storageStats }) => {
   const { user } = useAuth();
-  const { files } = useFiles(null);
   const [displayName, setDisplayName] = useState<string>('Гость');
-  const [photoURL, setPhotoURL] = useState<string>('');
-  const totalStorage = 1 * 1024 * 1024 * 1024; // 1 GB
 
   useEffect(() => {
-    if (user) {
-      // Показываем имя из профиля, если оно есть, иначе email
-      setDisplayName(user.email || 'Гость');
+    if (user?.email) {
+      setDisplayName(user.email);
     }
-  }, [user]);
+  }, [user?.email]); // ✅ Зависимость только от email
 
-  // Считаем общий размер всех файлов
-  const storageUsed = files.reduce((sum, f: any) => sum + (f.size || 0), 0);
-  const storagePercentage = Math.min((storageUsed / totalStorage) * 100, 100);
+  // ✅ Мемоизируем вычисления storage
+  const storageInfo = useMemo(() => {
+    if (!storageStats) {
+      return null;
+    }
+
+    const totalGB = storageStats.total / (1024 * 1024 * 1024);
+    const usedMB = storageStats.used / (1024 * 1024);
+    const percentage = Math.min((storageStats.used / storageStats.total) * 100, 100);
+
+    return {
+      totalGB: totalGB.toFixed(0),
+      usedMB: usedMB.toFixed(2),
+      percentage
+    };
+  }, [storageStats]);
+
+  // ✅ Не показываем storage info, пока она не загружена
+  if (!user) {
+    return (
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={onOpenSidebar}
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6">Облачное хранилище</Typography>
+        </Toolbar>
+      </AppBar>
+    );
+  }
 
   return (
     <AppBar position="static">
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        {/* Кнопка открытия Sidebar */}
         <IconButton
           edge="start"
           color="inherit"
@@ -51,15 +86,15 @@ const Header: React.FC<HeaderProps> = ({ onOpenSidebar }) => {
 
         <Typography variant="h6">Облачное хранилище</Typography>
 
-        {user && (
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          {storageInfo && (
             <Box>
               <Typography variant="body2" sx={{ color: 'white' }}>
-                Использовано: {(storageUsed / 1024 / 1024).toFixed(2)} MB из 1 GB
+                Использовано: {storageInfo.usedMB} MB из {storageInfo.totalGB} GB
               </Typography>
               <LinearProgress
                 variant="determinate"
-                value={storagePercentage}
+                value={storageInfo.percentage}
                 sx={{
                   width: 150,
                   borderRadius: 1,
@@ -68,10 +103,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenSidebar }) => {
                 }}
               />
             </Box>
-            <Avatar src={photoURL} alt={displayName} />
-            <Typography variant="body1">{displayName}</Typography>
-          </Box>
-        )}
+          )}
+          <Avatar alt={displayName} />
+          <Typography variant="body1">
+            <Link href="/profile" style={{ color: "white", textDecoration: "none" }}> 
+            {displayName}
+            </Link>
+            </Typography>
+        </Box>
       </Toolbar>
     </AppBar>
   );

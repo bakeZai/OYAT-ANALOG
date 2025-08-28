@@ -1,121 +1,162 @@
-"use client";
+// app/dashboard/page.tsx - ЦЕНТРАЛИЗОВАННОЕ УПРАВЛЕНИЕ ЗАПРОСАМИ
 
-import { useState, useEffect } from "react";
-import FileUpload from "@/components/files/FileUpload";
-import FileGrid from "@/components/files/FileGrid";
-import FolderManager from "@/components/files/FolderManager";
-import FilePreview from "@/components/files/FilePreview";
-import { File, Folder } from "@/types/files";
-import Layout from "@/components/layout/Layout";
+'use client';
+import { useState, useCallback } from 'react';
+import { useAuth } from '@/hooks/useAuth';
+import { useFiles } from '@/hooks/useFiles';
+import Layout from '@/components/layout/Layout';
+import FileGrid from '@/components/files/FileGrid';
+import FileUpload from '@/components/files/FileUpload';
+import FolderManager from '@/components/files/FolderManager';
+import Loading from '@/components/common/Loading';
+import { Box, Button, Typography, Breadcrumbs, Link } from '@mui/material';
+import { CloudUpload, CreateNewFolder } from '@mui/icons-material';
 
-// ======================== //
-export default function DashboardPage() {
-  const [files, setFiles] = useState<(File | Folder)[]>([]);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [folderModalOpen, setFolderModalOpen] = useState(false);
+interface BreadcrumbItem {
+  id: string | null;
+  name: string;
+}
 
-  // Запрос файлов с сервера
-  const fetchFiles = async () => {
-    try {
-      console.log("Refreshing files...");
-      // пример: const { data } = await supabase.from("files").select("*");
-      // setFiles(data || []);
-      setFiles([]); // пока пусто
-    } catch (err) {
-      console.error("Ошибка при загрузке файлов:", err);
-    }
-  };
-  const [uploadModalOpen, setUploadModalOpen] = useState(false);
-  const currentFolderId = null; // или id текущей папки
+export default function Dashboard() {
+  const { user, loading: authLoading } = useAuth();
+  
+  // ✅ Состояние для текущей папки и навигации
+  const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
+  const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([
+    { id: null, name: 'Главная' }
+  ]);
 
+  // ✅ ЕДИНСТВЕННЫЙ useFiles hook для всего dashboard
+  const { 
+    files, 
+    loading: filesLoading, 
+    error, 
+    refreshFiles 
+  } = useFiles(currentFolderId);
 
-  useEffect(() => {
-    fetchFiles();
+  // ✅ Состояние для модальных окон
+  const [uploadDialogOpen, setUploadDialogOpen] = useState(false);
+  const [folderDialogOpen, setFolderDialogOpen] = useState(false);
+
+  // ✅ Навигация по папкам
+  const handleFolderClick = useCallback((folder: any) => {
+    console.log('📁 Navigating to folder:', folder.name);
+    setCurrentFolderId(folder.id);
+    setBreadcrumbs(prev => [...prev, { id: folder.id, name: folder.name }]);
   }, []);
 
-  const handleFileClick = (file: File) => {
-    setSelectedFile(file);
-  };
+  // ✅ Навигация по breadcrumbs
+  const handleBreadcrumbClick = useCallback((targetId: string | null, index: number) => {
+    console.log('🧭 Navigating to breadcrumb:', targetId);
+    setCurrentFolderId(targetId);
+    setBreadcrumbs(prev => prev.slice(0, index + 1));
+  }, []);
 
-  const handleFileDelete = async (id: string) => {
-    console.log("Удаляю файл:", id);
-    await fetchFiles();
-  };
+  // ✅ Обработчики для модальных окон
+  const handleUploadSuccess = useCallback(() => {
+    console.log('✅ Upload successful, refreshing files...');
+    refreshFiles();
+  }, [refreshFiles]);
 
-  const handleFileRename = async (id: string, name: string) => {
-    console.log("Переименовываю файл:", id, name);
-    await fetchFiles();
-  };
+  const handleFolderCreated = useCallback(() => {
+    console.log('✅ Folder created, refreshing files...');
+    refreshFiles();
+  }, [refreshFiles]);
 
-  const handleFolderClick = (folder: Folder) => {
-    console.log("Открыл папку:", folder);
-  };
+  // Проверки загрузки и авторизации
+  if (authLoading) {
+    return (
+      <Layout>
+        <Loading />
+      </Layout>
+    );
+  }
+
+  if (!user) {
+    return (
+      <Layout>
+        <Typography variant="h5">Необходима авторизация</Typography>
+      </Layout>
+    );
+  }
 
   return (
-    <Layout>
-    <div className="p-4 space-y-4">
-      {/* Upload */}
+    <Layout files={files}> {/* ✅ Передаем files в Layout для storage stats */}
+      <Box>
+        {/* Хлебные крошки */}
+        <Breadcrumbs sx={{ mb: 2 }}>
+          {breadcrumbs.map((crumb, index) => (
+            <Link
+              key={`${crumb.id}-${index}`}
+              color={index === breadcrumbs.length - 1 ? 'text.primary' : 'inherit'}
+              onClick={() => {
+                if (index < breadcrumbs.length - 1) {
+                  handleBreadcrumbClick(crumb.id, index);
+                }
+              }}
+              sx={{ cursor: index < breadcrumbs.length - 1 ? 'pointer' : 'default' }}
+            >
+              {crumb.name}
+            </Link>
+          ))}
+        </Breadcrumbs>
 
-      
-      <FileUpload
-     open={uploadModalOpen}                // управляем открытием
-      onClose={() => setUploadModalOpen(false)} // закрытие диалога
-     onUploadSuccess={fetchFiles}          // что делать после загрузки
-    currentFolderId={currentFolderId}     // передаем текущую папку
+        {/* Кнопки действий */}
+        <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
+          <Button
+            variant="contained"
+            startIcon={<CloudUpload />}
+            onClick={() => setUploadDialogOpen(true)}
+            disabled={filesLoading}
+          >
+            Загрузить файл
+          </Button>
+          <Button
+            variant="outlined"
+            startIcon={<CreateNewFolder />}
+            onClick={() => setFolderDialogOpen(true)}
+            disabled={filesLoading}
+          >
+            Создать папку
+          </Button>
+        </Box>
 
+        {/* Отображение ошибок */}
+        {error && (
+          <Typography color="error" sx={{ mb: 2 }}>
+            Ошибка: {error}
+          </Typography>
+        )}
 
-    
-    />
+        {/* Список файлов */}
+        {filesLoading ? (
+          <Loading />
+        ) : (
+          <FileGrid
+            files={files}
+            onFolderClick={handleFolderClick}
+            onRefresh={refreshFiles}
+          />
+        )}
 
-<button
-  onClick={() => setUploadModalOpen(true)}
-  className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
->
-  Добавить файл
-</button>
+        {/* Модальные окна */}
+        <FileUpload
+          open={uploadDialogOpen}
+          onClose={() => setUploadDialogOpen(false)}
+          onUploadSuccess={handleUploadSuccess}
+          currentFolderId={currentFolderId}
+        />
 
-      {/* Кнопка для создания папки */}
-      <button
-        onClick={() => setFolderModalOpen(true)}
-        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-      >
-        Создать папку
-      </button>
-
-      {/* Модалка создания папки */}
-      <FolderManager
-        open={folderModalOpen}
-         onClose={() => setFolderModalOpen(false)}
-        onCreateFolder={async (folderName: string) => {
-        console.log("Создаю папку:", folderName);
-        setFolderModalOpen(false);
-         await fetchFiles();
-  }}
-  onFolderCreated={fetchFiles}
-/>
-
-
-      {/* Сетка файлов */}
-      <FileGrid
-        files={files}
-        onFileClick={handleFileClick}
-        onFileDelete={handleFileDelete}
-        onFileRename={handleFileRename}
-        onFolderClick={handleFolderClick}
-        onRefresh={fetchFiles}
-      />
-
-      {/* Превью файла */}
-      {selectedFile && (
-        <FilePreview
-        open={!!selectedFile}
-        file={selectedFile}
-        onClose={() => setSelectedFile(null)}
-      />
-      
-      )}
-    </div>
+        <FolderManager
+          open={folderDialogOpen}
+          onClose={() => setFolderDialogOpen(false)}
+          onFolderCreated={handleFolderCreated}
+          onCreateFolder={async (name: string) => {
+            // Эта функция будет реализована в FolderManager через useFiles
+            console.log('Creating folder:', name);
+          }}
+        />
+      </Box>
     </Layout>
   );
 }
-

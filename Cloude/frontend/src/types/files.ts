@@ -10,6 +10,8 @@ export interface File {
     mime_type: string;
     folder_id: string | null;
     created_at: string;
+    url: string; // ✅ добавляем
+
   }
   
   /**

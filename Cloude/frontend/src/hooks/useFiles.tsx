@@ -1,9 +1,9 @@
-// frontend/src/hooks/useFiles.tsx
+// frontend/src/hooks/useFiles.tsx - ИСПРАВЛЕННАЯ ВЕРСИЯ БЕЗ ДУБЛИРОВАНИЯ
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { File, Folder } from '@/types/files';
 import { fetchUserFiles, uploadFileToApi, deleteFileFromApi, renameFileInApi, createFolderInApi } from '@/lib/api';
-import { useAuth } from '@/hooks/useAuth'; // ⬅️ IMPORT THE AUTH HOOK
+import { useAuth } from '@/hooks/useAuth';
 
 /**
  * Custom hook for managing files and folders.
@@ -14,110 +14,152 @@ export const useFiles = (currentFolderId: string | null = null) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // ➡️ GET THE USER'S SESSION & TOKEN
-  const { session } = useAuth();
+  const { session, user } = useAuth();
   const token = session?.access_token;
+  
+  // ✅ Отслеживаем уже выполненные запросы
+  const lastFetchRef = useRef<string>('');
+  const fetchingRef = useRef(false);
 
-  // Load files when the current folder or user session changes
+  // ✅ Загружаем файлы только при реальном изменении зависимостей
   useEffect(() => {
-    const getFiles = async () => {
-      // ➡️ Check if a token exists before fetching
-      if (!token) {
-        setLoading(false);
-        return;
-      }
+    if (!user || !token) {
+      setFiles([]);
+      setLoading(false);
+      return;
+    }
+
+    // Создаем уникальный ключ для текущего запроса
+    const currentKey = `${user.id}-${currentFolderId || 'root'}-${token.substring(0, 10)}`;
+    
+    // Если этот запрос уже выполнялся, пропускаем
+    if (lastFetchRef.current === currentKey || fetchingRef.current) {
+      console.log(`🚫 Skipping duplicate request for: ${currentKey}`);
+      return;
+    }
+
+    const fetchFiles = async () => {
+      fetchingRef.current = true;
+      lastFetchRef.current = currentKey;
+      
       setLoading(true);
       setError(null);
+
       try {
-        const data = await fetchUserFiles(currentFolderId, token); // ⬅️ PASS THE TOKEN
+        console.log(`📂 Fetching files for folder: ${currentFolderId || 'root'}`);
+        const data = await fetchUserFiles(currentFolderId, token);
         setFiles(data);
+        console.log(`✅ Files loaded: ${data.length} items`);
       } catch (err: any) {
+        console.error('❌ Fetch files error:', err);
         setError(err.message);
+        setFiles([]);
       } finally {
         setLoading(false);
+        fetchingRef.current = false;
       }
     };
-    getFiles();
-  }, [currentFolderId, token]); // ⬅️ ADD TOKEN TO THE DEPENDENCY ARRAY
 
-  /**
-   * Forces a refresh of the file list.
-   */
-  const refreshFiles = async () => {
-    if (!token) return;
+    // Добавляем небольшую задержку для batch запросов
+    const timeoutId = setTimeout(fetchFiles, 50);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [currentFolderId, token, user?.id]); // ✅ Конкретные зависимости
+
+  // ✅ Мемоизированная функция обновления списка (НЕ вызывает fetchFiles напрямую)
+  const refreshFiles = useCallback(async () => {
+    if (!user || !token || fetchingRef.current) return;
+    
+    console.log('🔄 Manual refresh requested...');
+    // Сбрасываем кэш для принудительного обновления
+    lastFetchRef.current = '';
+    
+    fetchingRef.current = true;
     setLoading(true);
     setError(null);
+
     try {
-      const data = await fetchUserFiles(currentFolderId, token); // ⬅️ PASS THE TOKEN
+      const data = await fetchUserFiles(currentFolderId, token);
       setFiles(data);
+      console.log('✅ Manual refresh completed:', data.length, 'items');
     } catch (err: any) {
+      console.error('❌ Manual refresh error:', err);
       setError(err.message);
     } finally {
       setLoading(false);
+      fetchingRef.current = false;
     }
-  };
+  }, [currentFolderId, user?.id, token]);
 
   /**
    * Uploads a new file.
-   * @param file The file object.
    */
-  const uploadFile = async (file: globalThis.File) => {
+  const uploadFile = useCallback(async (file: globalThis.File) => {
     if (!token) throw new Error('Authentication token is missing.');
-    console.log('Токен:', token); // Логируем токен
+    
     try {
+      console.log('📤 Uploading file:', file.name);
       await uploadFileToApi(file, currentFolderId, token);
       await refreshFiles();
+      console.log('✅ File uploaded and list refreshed');
     } catch (err: any) {
       setError(err.message);
       throw err;
     }
-  };
+  }, [currentFolderId, token, refreshFiles]);
 
   /**
    * Deletes a file.
-   * @param fileId The ID of the file to delete.
    */
-  const deleteFile = async (fileId: string) => {
+  const deleteFile = useCallback(async (fileId: string) => {
     if (!token) throw new Error('Authentication token is missing.');
+    
     try {
-      await deleteFileFromApi(fileId, token); // ⬅️ PASS THE TOKEN
+      console.log('🗑️ Deleting file:', fileId);
+      await deleteFileFromApi(fileId, token);
       await refreshFiles();
+      console.log('✅ File deleted and list refreshed');
     } catch (err: any) {
       setError(err.message);
       throw err;
     }
-  };
+  }, [token, refreshFiles]);
 
   /**
    * Renames a file.
-   * @param fileId The ID of the file to rename.
-   * @param newName The new name.
    */
-  const renameFile = async (fileId: string, newName: string) => {
+  const renameFile = useCallback(async (fileId: string, newName: string) => {
     if (!token) throw new Error('Authentication token is missing.');
+    
     try {
-      await renameFileInApi(fileId, newName, token); // ⬅️ PASS THE TOKEN
+      console.log('✏️ Renaming file:', fileId, 'to', newName);
+      await renameFileInApi(fileId, newName, token);
       await refreshFiles();
+      console.log('✅ File renamed and list refreshed');
     } catch (err: any) {
       setError(err.message);
       throw err;
     }
-  };
+  }, [token, refreshFiles]);
 
   /**
    * Creates a new folder.
-   * @param folderName The name of the new folder.
    */
-  const createFolder = async (folderName: string) => {
+  const createFolder = useCallback(async (folderName: string) => {
     if (!token) throw new Error('Authentication token is missing.');
+    
     try {
-      await createFolderInApi(folderName, currentFolderId, token); // ⬅️ PASS THE TOKEN
+      console.log('📁 Creating folder:', folderName);
+      await createFolderInApi(folderName, currentFolderId, token);
       await refreshFiles();
+      console.log('✅ Folder created and list refreshed');
     } catch (err: any) {
       setError(err.message);
       throw err;
     }
-  };
+  }, [currentFolderId, token, refreshFiles]);
 
   return {
     files,

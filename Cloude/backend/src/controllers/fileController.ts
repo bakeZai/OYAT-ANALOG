@@ -49,7 +49,7 @@ export class FileController {
 
       const timestamp = Date.now();
       const fileName = `${userId}/${timestamp}-${file.originalname}`;
-      
+
       const { data: storageData, error: storageError } = await supabaseAdmin.storage
       .from('files')
       .upload(fileName, file.buffer, {
@@ -85,12 +85,11 @@ export class FileController {
       }
 
       console.log(`File uploaded successfully: ${file.originalname}`);
-      res.json({ 
-        success: true, 
+      res.json({
+        success: true,
         file: {
           ...dbData,
-          type: 'file',
-          url: supabase.storage.from('files').getPublicUrl(fileName).data.publicUrl
+          type: 'file'
         }
       });
 

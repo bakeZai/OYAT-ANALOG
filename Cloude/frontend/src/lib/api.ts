@@ -1,8 +1,75 @@
-// frontend/src/lib/api.ts - С УЛУЧШЕННЫМ ЛОГИРОВАНИЕМ
+// frontend/src/lib/api.ts - С ЗАЩИТОЙ ОТ ДУБЛИРОВАНИЯ
 
 import { File, Folder } from '@/types/files';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+
+// ✅ Кэш для предотвращения дублирования запросов
+const requestCache = new Map<string, Promise<any>>();
+
+/**
+ * Получение списка файлов и папок для текущей папки.
+ */
+export const fetchUserFiles = async (currentFolderId: string | null, token: string): Promise<(File | Folder)[]> => {
+  // ✅ Создаем уникальный ключ для кэширования
+  const cacheKey = `files-${currentFolderId || 'root'}-${token.substring(0, 10)}`;
+  
+  // Если такой запрос уже выполняется, возвращаем существующий Promise
+  if (requestCache.has(cacheKey)) {
+    console.log(`🔄 Using cached request for: ${cacheKey}`);
+    return requestCache.get(cacheKey)!;
+  }
+
+  console.log(`📡 TRACE: fetchUserFiles для folderId ${currentFolderId}`);
+  
+  const params = new URLSearchParams();
+  if (currentFolderId) {
+    params.append('folderId', currentFolderId);
+  }
+
+  // Создаем промис для запроса
+  const requestPromise = (async () => {
+    try {
+      const response = await fetch(`${API_URL}/files?${params.toString()}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        cache: 'no-store',
+      });
+
+      if (!response.ok) {
+        console.error(`Ошибка при получении файлов. Статус: ${response.status}`);
+        const errorData = await response.json();
+        if (response.status === 401) {
+          throw new Error(`401: Доступ запрещен. Необходима авторизация.`);
+        }
+        if (response.status === 404) {
+          throw new Error(`202: Файлы не найдены в этой папке.`);
+        } else if (response.status >= 500) {
+          throw new Error(`101: Ошибка сервера. Повторите попытку.`);
+        }
+        throw new Error(errorData.message || 'Ошибка получения файлов');
+      }
+
+      const { files } = await response.json();
+      console.log("Полученные файлы:", files);
+
+      return files || [];
+    } finally {
+      // ✅ Удаляем из кэша через короткое время
+      setTimeout(() => {
+        requestCache.delete(cacheKey);
+      }, 1000);
+    }
+  })();
+
+  // Сохраняем промис в кэш
+  requestCache.set(cacheKey, requestPromise);
+  
+  return requestPromise;
+};
 
 /**
  * Загрузка файла на сервер.
@@ -41,7 +108,6 @@ export const uploadFileToApi = async (file: globalThis.File, currentFolderId: st
         errorData = await response.json();
         console.error('❌ Server error response:', errorData);
       } catch (parseError) {
-        // Если не удается распарсить JSON, получаем текст
         const errorText = await response.text();
         console.error('❌ Server error (text):', errorText);
         throw new Error(`Server error ${response.status}: ${errorText}`);
@@ -51,48 +117,16 @@ export const uploadFileToApi = async (file: globalThis.File, currentFolderId: st
 
     const result = await response.json();
     console.log('✅ Upload successful:', result);
+    
+    // ✅ Очищаем кэш после успешной загрузки
+    requestCache.clear();
+    
     return result;
 
   } catch (error) {
     console.error('💥 Upload failed:', error);
     throw error;
   }
-};
-
-// Остальные функции без изменений...
-export const fetchUserFiles = async (currentFolderId: string | null, token: string): Promise<(File | Folder)[]> => {
-  const params = new URLSearchParams();
-  if (currentFolderId) {
-    params.append('folderId', currentFolderId);
-  }
-
-  const response = await fetch(`${API_URL}/files?${params.toString()}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-    cache: 'no-store',
-  });
-
-  if (!response.ok) {
-    console.error(`Ошибка при получении файлов. Статус: ${response.status}`);
-    const errorData = await response.json();
-    if (response.status === 401) {
-      throw new Error(`401: Доступ запрещен. Необходима авторизация.`);
-    }
-    if (response.status === 404) {
-      throw new Error(`202: Файлы не найдены в этой папке.`);
-    } else if (response.status >= 500) {
-      throw new Error(`101: Ошибка сервера. Повторите попытку.`);
-    }
-    throw new Error(errorData.message || 'Ошибка получения файлов');
-  }
-
-  const { files } = await response.json();
-  console.log("Полученные файлы:", files);
-
-  return files || [];
 };
 
 export const deleteFileFromApi = async (id: string, token: string) => {

@@ -12,16 +12,15 @@ import {
   TextField,
   Alert,
 } from '@mui/material';
-import { useFiles } from '@/hooks/useFiles';
 
+// ✅ Удаляем импорт useFiles
+// import { useFiles } from '@/hooks/useFiles';
 
-
-    
 export interface FolderManagerProps {
-  onCreateFolder: (folderName: string) => Promise<void>;
+  // ✅ Упрощаем пропсы. Теперь компонент просто принимает onFolderCreated, который и будет выполнять всю логику
   open: boolean;
   onClose: () => void;
-  onFolderCreated: () => void;
+  onFolderCreated: (folderName: string) => Promise<void>;
 }
 
 const FolderManager: React.FC<FolderManagerProps> = ({
@@ -29,25 +28,27 @@ const FolderManager: React.FC<FolderManagerProps> = ({
   onClose,
   onFolderCreated,
 }) => {
-  const { createFolder } = useFiles();
+  // ✅ Убираем состояние loading и error, так как они будут управляться в родительском компоненте
+  // const { createFolder } = useFiles();
   const [folderName, setFolderName] = useState('');
-  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-
+  
   const handleCreateFolder = async () => {
     if (!folderName.trim()) {
-      setError('Имя папки не может быть пустым.');
+      // ✅ Теперь мы просто выводим ошибку в консоль, так как
+      // управление ошибками будет в родительском компоненте
+      console.error('Имя папки не может быть пустым.');
       return;
     }
 
     setLoading(true);
-    setError(null);
     try {
-      await createFolder(folderName);
-      onFolderCreated();
+      await onFolderCreated(folderName); // ✅ Вызываем пропс с именем папки
       setFolderName('');
+      onClose();
     } catch (err: any) {
-      setError(err.message);
+      // ✅ Ошибка будет обрабатываться в родительском компоненте
+      console.error(err.message);
     } finally {
       setLoading(false);
     }
@@ -55,7 +56,6 @@ const FolderManager: React.FC<FolderManagerProps> = ({
 
   const handleClose = () => {
     setFolderName('');
-    setError(null);
     onClose();
   };
 
@@ -75,7 +75,8 @@ const FolderManager: React.FC<FolderManagerProps> = ({
           onChange={(e) => setFolderName(e.target.value)}
           sx={{ mt: 2 }}
         />
-        {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>}
+        {/* ✅ Убираем отображение ошибок */}
+        {/* {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>} */}
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} disabled={loading}>

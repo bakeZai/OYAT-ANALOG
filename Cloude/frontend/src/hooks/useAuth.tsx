@@ -1,10 +1,9 @@
-// frontend/src/hooks/useAuth.ts
 'use client';
 
 import { useState, useEffect, createContext, useContext } from 'react';
 import { User, Session, AuthChangeEvent } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface AuthContextType {
   user: User | null;
@@ -31,35 +30,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Initial check and subscription
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event: AuthChangeEvent, session: Session | null) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        setLoading(false);
-
-        // Redirect based on auth state
-        if (event === 'SIGNED_IN') {
-          router.push('/dashboard');
-        } else if (event === 'SIGNED_OUT') {
-          router.push('/login');
-        }
-      }
-    );
-
-    // Initial load
-    const checkUser = async () => {
-      const { data: { session: initialSession } } = await supabase.auth.getSession();
-      setSession(initialSession);
-      setUser(initialSession?.user ?? null);
+    const handleAuthStateChange = (event: AuthChangeEvent, session: Session | null) => {
+      setSession(session);
+      setUser(session?.user ?? null);
       setLoading(false);
-    };
-    checkUser();
 
+      const isAuthenticated = !!session;
+      const isPublicPath = pathname === '/login' || pathname === '/signup';
+
+      if (isAuthenticated && isPublicPath) {
+        router.push('/dashboard');
+      } else if (!isAuthenticated && !isPublicPath) {
+        router.push('/login');
+      }
+    };
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(handleAuthStateChange);
+
+    // ✅ Убираем лишний вызов checkUser(), так как onAuthStateChange
+    // сам по себе вызывается при первой загрузке страницы,
+    // устанавливая начальное состояние и вызывая handleAuthStateChange.
+    // Это устраняет ошибку с "INITIAL_LOAD".
+    
+    // ✅ Отписываемся при размонтировании компонента
     return () => subscription.unsubscribe();
-  }, [router]);
+  }, [router, pathname]);
 
   const signUp = async (email: string, password: string, fullName: string) => {
     const { data, error } = await supabase.auth.signUp({
@@ -72,14 +70,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       },
     });
   
-    // ✅ Исправляем поле
     if (data?.user) {
       const { error: profileError } = await supabase
         .from('profiles')
         .insert([
           {
             id: data.user.id,
-            full_name: fullName, // ✅ Правильное поле
+            full_name: fullName,
             storage_used: 0,
             storage_limit: 1000 * 1024 * 1024, // 1GB
           },
@@ -122,4 +119,3 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
-  
