@@ -11,6 +11,7 @@ export interface File {
     folder_id: string | null;
     created_at: string;
     url: string; // ✅ добавляем
+    storage_path?: string; // ✅ добавляем optional
 
   }
   

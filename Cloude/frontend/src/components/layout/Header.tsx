@@ -15,6 +15,7 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 import { useAuth } from '@/hooks/useAuth';
 import Link from "next/link";
 
+
 interface HeaderProps {
   onOpenSidebar: () => void;
   // ✅ Принимаем статистику от родительского компонента

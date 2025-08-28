@@ -1,15 +1,14 @@
-// frontend/src/components/layout/Layout.tsx - ЦЕНТРАЛИЗОВАННОЕ УПРАВЛЕНИЕ
-
+// frontend/src/components/layout/Layout.tsx
 'use client';
 import { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import { File, Folder } from '@/types/files'; // Import File and Folder types
 
 interface LayoutProps {
   children: React.ReactNode;
-  // ✅ Принимаем files от dashboard компонента
-  files?: Array<{ size?: number }>;
+  files?: (File | Folder)[]; // Update to use File | Folder
 }
 
 /**
@@ -24,20 +23,23 @@ const Layout: React.FC<LayoutProps> = ({ children, files = [] }) => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // ✅ Мемоизируем вычисление storage stats
+  // Мемоизируем вычисление storage stats
   const storageStats = useMemo(() => {
     if (!files.length) return undefined;
 
-    const usedBytes = files.reduce((sum, file) => sum + (file.size || 0), 0);
+    // Filter to only include File objects (exclude Folder)
+    const usedBytes = files
+      .filter((item): item is File => item.type === 'file')
+      .reduce((sum, file) => sum + file.size, 0);
     const totalBytes = 1 * 1024 * 1024 * 1024; // 1GB
 
     return {
       used: usedBytes,
-      total: totalBytes
+      total: totalBytes,
     };
   }, [files]);
 
-  // ✅ Логирование только при изменении количества файлов
+  // Логирование только при изменении количества файлов
   useEffect(() => {
     if (files.length > 0) {
       console.log(`📊 Layout: Managing ${files.length} files`);
